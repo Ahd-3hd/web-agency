@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Wrapper } from "./index.style";
+import { Wrapper } from "../styles/index.style";
 import Header from "../components/Header";
 export default function Home() {
   return (

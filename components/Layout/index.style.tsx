@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { useState, useEffect } from "react";
 export const BackgroundWrapper = styled.div`
   position: fixed;
   width: 100%;
@@ -32,12 +32,34 @@ export const BackgroundVerticalLine = styled.div<{ num: number }>`
   }
 `;
 
-export const Background = () => (
-  <BackgroundWrapper>
-    <BackgroundVerticalLine num={1} />
-    <BackgroundVerticalLine num={2} />
-    <BackgroundVerticalLine num={3} />
-    <BackgroundVerticalLine num={4} />
-    <BackgroundVerticalLine num={4} />
-  </BackgroundWrapper>
-);
+export const BackgroundSquare = styled.div<{
+  top: number;
+  left: number;
+  purple?: boolean;
+}>`
+  width: 15px;
+  height: 15px;
+  background: ${({ theme: { colors }, purple }) =>
+    purple ? colors.darkPurple : colors.secondary};
+  top: ${({ top }) => top}%;
+  left: ${({ left }) => left}%;
+  position: absolute;
+`;
+
+export const Background = () => {
+  return (
+    <BackgroundWrapper>
+      <BackgroundVerticalLine num={1} />
+      <BackgroundVerticalLine num={2} />
+      <BackgroundVerticalLine num={3} />
+      <BackgroundVerticalLine num={4} />
+      <BackgroundVerticalLine num={4} />
+      <BackgroundSquare top={10} left={50} />
+      <BackgroundSquare top={40} left={90} />
+      <BackgroundSquare top={10} left={50} purple />
+      <BackgroundSquare top={90} left={10} />
+      <BackgroundSquare top={90} left={90} purple />
+      <BackgroundSquare top={90} left={10} />
+    </BackgroundWrapper>
+  );
+};
