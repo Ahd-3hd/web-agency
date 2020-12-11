@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.header`
-  padding-top: 4rem;
+  padding-top: 3.5rem;
 
   @media (min-width: 900px) {
     display: flex;
