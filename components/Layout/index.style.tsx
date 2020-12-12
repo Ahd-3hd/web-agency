@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
 export const BackgroundWrapper = styled.div`
   position: fixed;
   width: 100%;
@@ -12,10 +11,10 @@ export const BackgroundWrapper = styled.div`
   z-index: -1;
   > svg {
     position: absolute;
-    height: 20%;
+    height: 10%;
     stroke-width: 6px;
-    left: 50%;
-    top: 70%;
+    left: 80%;
+    top: 95%;
     stroke: ${({ theme: { colors } }) => colors.lightPurple};
   }
 `;
@@ -48,7 +47,7 @@ export const BackgroundSquare = styled.div<{
   width: 15px;
   height: 15px;
   background: ${({ theme: { colors }, purple }) =>
-    purple ? colors.darkPurple : colors.secondary};
+    purple ? colors.lightPurple : colors.secondary};
   top: ${({ top }) => top}%;
   left: ${({ left }) => left}%;
   position: absolute;
@@ -69,11 +68,10 @@ export const Background = () => {
       <BackgroundVerticalLine num={4} />
       <BackgroundVerticalLine num={4} />
       <BackgroundSquare top={10} left={50} />
-      <BackgroundSquare top={40} left={90} />
+      <BackgroundSquare top={40} left={80} />
       <BackgroundSquare top={10} left={50} purple />
-      <BackgroundSquare top={90} left={10} />
       <BackgroundSquare top={90} left={90} purple />
-      <BackgroundSquare top={90} left={10} />
+      <BackgroundSquare top={95} left={10} />
       <HalfCircle />
     </BackgroundWrapper>
   );

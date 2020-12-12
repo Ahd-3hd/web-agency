@@ -67,4 +67,5 @@ export const AnchorButton = styled.a`
   }
   border-radius: 5px;
   letter-spacing: 0.8px;
+  box-shadow: 0px 4px 15px rgba(157, 152, 236, 0.21);
 `;
