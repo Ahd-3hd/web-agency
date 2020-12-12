@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import PromoOne from "../components/PromoOne";
 import PromoTwo from "../components/PromoTwo";
 import Features from "../components/Features";
+import Contact from "../components/Contact";
 export default function Home() {
   return (
     <div>
@@ -16,6 +17,7 @@ export default function Home() {
         <PromoOne />
         <PromoTwo />
         <Features />
+        <Contact />
       </Wrapper>
     </div>
   );
