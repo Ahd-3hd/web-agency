@@ -80,6 +80,9 @@ export const GraphContainer = styled.div`
   }
   @media (min-width: 900px) {
     flex: 1;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
     :after {
       clip-path: polygon(0 0, 100% 22%, 100% 81%, 0% 100%);
     }

@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Wrapper } from "../styles/index.style";
 import Header from "../components/Header";
 import PromoOne from "../components/PromoOne";
+import PromoTwo from "../components/PromoTwo";
 export default function Home() {
   return (
     <div>
@@ -12,6 +13,7 @@ export default function Home() {
       <Wrapper>
         <Header />
         <PromoOne />
+        <PromoTwo />
       </Wrapper>
     </div>
   );
