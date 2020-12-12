@@ -12,7 +12,7 @@ export const Details = styled.div`
   display: flex;
   flex-direction: column;
   @media (min-width: 900px) {
-    flex: 1;
+    flex: 1.5;
     justify-content: center;
   }
 `;
@@ -122,5 +122,14 @@ export const RandomQuote = styled.p`
     max-width: 40ch;
     align-self: center;
     color: ${({ theme: { colors } }) => colors.darkPurple};
+    position: relative;
+    :before {
+      content: "❝";
+      position: absolute;
+      left: -3rem;
+      top: -2.5rem;
+      font-size: 5rem;
+      color: ${({ theme: { colors } }) => colors.secondary};
+    }
   }
 `;
