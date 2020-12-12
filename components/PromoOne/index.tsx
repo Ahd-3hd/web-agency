@@ -1,4 +1,14 @@
-import { Wrapper, Details, Title, List, ListItem } from "./index.style";
+import {
+  Wrapper,
+  Details,
+  Title,
+  List,
+  ListItem,
+  GraphContainer,
+  GraphImg,
+  GraphCardsImg,
+  RandomQuote,
+} from "./index.style";
 
 const data = [
   "Employ The latest technologies",
@@ -19,7 +29,15 @@ const PromoOne = () => {
             <ListItem key={item}>{item}</ListItem>
           ))}
         </List>
+        <RandomQuote>
+          With BruhWTF we humanize technology and make it like a likable person
+          who you would enjoy spending time with.
+        </RandomQuote>
       </Details>
+      <GraphContainer>
+        <GraphImg src="/img/graph.png" alt="graph" />
+        <GraphCardsImg src="img/graph_cards.png" alt="cards" />
+      </GraphContainer>
     </Wrapper>
   );
 };
