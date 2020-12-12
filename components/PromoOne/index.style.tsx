@@ -1,21 +1,13 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div<{ isVisible: boolean }>`
+export const Wrapper = styled.div`
   margin-top: 4rem;
   @media (min-width: 900px) {
     display: flex;
     flex-direction: row-reverse;
   }
-  overflow: hidden;
-  .title {
-    transition: transform 1s ease-in;
-    transform: translateX(${({ isVisible }) => (isVisible ? "0%" : "100%")})
-      scale(${({ isVisible }) => (isVisible ? "1" : "0")});
-  }
-  img {
-    transition: transform 1s ease-in;
-    transform: translateX(${({ isVisible }) => (isVisible ? "0%" : "-100%")})
-      scale(${({ isVisible }) => (isVisible ? "1" : "0")});
+  @media (min-width: 1024px) {
+    padding: 0 10vw;
   }
 `;
 

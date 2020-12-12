@@ -13,22 +13,8 @@ import ControlPanel from "../../svg/ControlPanel.svg";
 import LockIcon from "../../svg/Lock.svg";
 
 const Features = () => {
-  const wrapperRef = useRef<HTMLDivElement>();
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleObserver = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
-  };
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver, {
-      threshold: 0.4,
-    });
-    if (wrapperRef && wrapperRef.current) {
-      observer.observe(wrapperRef.current);
-    }
-  }, []);
   return (
-    <Wrapper ref={wrapperRef} isVisible={isVisible}>
+    <Wrapper>
       <Title>
         Included in all of our <span>plans</span>
       </Title>

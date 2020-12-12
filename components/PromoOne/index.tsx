@@ -18,22 +18,8 @@ const data = [
   "Make use of years of Hands-On experience",
 ];
 const PromoOne = () => {
-  const wrapperRef = useRef<HTMLDivElement>();
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleObserver = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
-  };
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver, {
-      threshold: 0.4,
-    });
-    if (wrapperRef && wrapperRef.current) {
-      observer.observe(wrapperRef.current);
-    }
-  }, []);
   return (
-    <Wrapper ref={wrapperRef} isVisible={isVisible}>
+    <Wrapper>
       <Details>
         <Title className="title">
           Shifting from <span>Chaotic</span>

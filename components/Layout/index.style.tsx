@@ -51,6 +51,7 @@ export const BackgroundSquare = styled.div<{
   top: ${({ top }) => top}%;
   left: ${({ left }) => left}%;
   position: absolute;
+  opacity: 0.6;
 `;
 
 const HalfCircle = () => (
