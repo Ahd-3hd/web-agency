@@ -1,7 +1,47 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ isVisible: boolean }>`
   margin: ${({ theme: { spaces } }) => spaces.lg} 0;
+  overflow: hidden;
+  min-height: 500px;
+  .feature:nth-child(1) {
+    transition: transform 1s ease-out;
+    transform: scale(
+      ${({ isVisible }) => (isVisible ? "1" : "0.4")}
+    ) !important;
+  }
+  .feature:nth-child(2) {
+    transition: transform 1s ease-out;
+    transform: scale(
+      ${({ isVisible }) => (isVisible ? "1" : "0.4")}
+    ) !important;
+  }
+  .feature:nth-child(3) {
+    transition: transform 1s ease-out;
+    transform: scale(
+      ${({ isVisible }) => (isVisible ? "1" : "0.4")}
+    ) !important;
+  }
+  @media (min-width: 768px) {
+    .feature:nth-child(1) {
+      transition: transform 1s ease-out;
+      transform: translateY(
+        ${({ isVisible }) => (isVisible ? "0" : "100%")}
+      ) !important;
+    }
+    .feature:nth-child(2) {
+      transition: transform 1s ease-out;
+      transform: translateY(
+        ${({ isVisible }) => (isVisible ? "30%" : "100%")}
+      ) !important;
+    }
+    .feature:nth-child(3) {
+      transition: transform 1s ease-out;
+      transform: translateY(
+        ${({ isVisible }) => (isVisible ? "80%" : "100%")}
+      ) !important;
+    }
+  }
 `;
 export const Title = styled.p`
   text-align: center;

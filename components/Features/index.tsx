@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef } from "react";
+
 import {
   Wrapper,
   Title,
@@ -11,13 +13,27 @@ import ControlPanel from "../../svg/ControlPanel.svg";
 import LockIcon from "../../svg/Lock.svg";
 
 const Features = () => {
+  const wrapperRef = useRef<HTMLDivElement>();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleObserver = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
+  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, {
+      threshold: 0.4,
+    });
+    if (wrapperRef && wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+  }, []);
   return (
-    <Wrapper>
+    <Wrapper ref={wrapperRef} isVisible={isVisible}>
       <Title>
         Included in all of our <span>plans</span>
       </Title>
       <FeaturesContainer>
-        <Feature fill="darkPurple">
+        <Feature fill="darkPurple" className="feature">
           <PieChart />
           <FeatureTitle>Analytics & Monitoring</FeatureTitle>
           <FeatureParagraph>
@@ -25,7 +41,7 @@ const Features = () => {
             your decisions and monitor usage
           </FeatureParagraph>
         </Feature>
-        <Feature fill="secondary">
+        <Feature fill="secondary" className="feature">
           <ControlPanel />
           <FeatureTitle>Control Panel</FeatureTitle>
           <FeatureParagraph>
@@ -33,7 +49,7 @@ const Features = () => {
             solid attention to details
           </FeatureParagraph>
         </Feature>
-        <Feature fill="primary">
+        <Feature fill="primary" className="feature">
           <LockIcon />
           <FeatureTitle>Securtiy & Authentication</FeatureTitle>
           <FeatureParagraph>

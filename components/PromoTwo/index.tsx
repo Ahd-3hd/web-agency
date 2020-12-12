@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import {
   Wrapper,
   Details,
@@ -13,10 +14,24 @@ const data = [
   "Pleasing visuals & enjoyable to look at",
 ];
 const PromoTwo = () => {
+  const wrapperRef = useRef<HTMLDivElement>();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleObserver = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
+  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, {
+      threshold: 0.4,
+    });
+    if (wrapperRef && wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+  }, []);
   return (
-    <Wrapper>
+    <Wrapper ref={wrapperRef} isVisible={isVisible}>
       <Details>
-        <Title>
+        <Title className="title">
           Every <span>Design</span> Begins
           <br />
           with an even <span>better</span> story
