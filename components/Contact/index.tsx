@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <Wrapper>
       <Title>
-        Contact <span>BruhWTF</span>
+        Contact <span>Web Agency</span>
       </Title>
       <Paragraph>
         Ready to turn your idea into reality? get in touch and we will help you
