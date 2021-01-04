@@ -15,7 +15,7 @@ const Header = () => {
       <IntroContainer>
         <Title>
           <TitleParagraph>At</TitleParagraph>
-          <TitleParagraph>BruhWTF</TitleParagraph>
+          <TitleParagraph>Web Agency</TitleParagraph>
           <TitleParagraph>We Engineer Smart</TitleParagraph>
           <TitleParagraph>Solutions</TitleParagraph>
         </Title>

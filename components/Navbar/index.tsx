@@ -9,7 +9,7 @@ import MenuIcon from "../../svg/Menu.svg";
 const Navbar = () => {
   return (
     <Wrapper>
-      <Logo>BruhWTF</Logo>
+      <Logo>Web Agency</Logo>
       <MenuButton>
         <MenuIcon />
       </MenuButton>

@@ -32,8 +32,8 @@ const PromoOne = () => {
           ))}
         </List>
         <RandomQuote>
-          With BruhWTF we humanize technology and make it like a likable person
-          who you would enjoy spending time with.
+          With Web Agency we humanize technology and make it like a likable
+          person who you would enjoy spending time with.
         </RandomQuote>
       </Details>
       <GraphContainer>
